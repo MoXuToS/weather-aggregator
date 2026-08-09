@@ -1,4 +1,4 @@
-package ru.moxutos.meteo.weather.model.entity;
+package ru.moxutos.meteo.weather.model.domain.jpa;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,7 +20,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "weather_source")
-public class WeatherSource {
+public class WeatherSourceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "source_id", nullable = false)
@@ -45,6 +45,6 @@ public class WeatherSource {
     private String apiKey;
 
     @OneToMany(mappedBy = "source")
-    private Set<WeatherRecord> weatherRecords = new LinkedHashSet<>();
+    private Set<WeatherRecordEntity> weatherRecords = new LinkedHashSet<>();
 
 }

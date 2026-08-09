@@ -1,4 +1,4 @@
-package ru.moxutos.meteo.weather.model.entity;
+package ru.moxutos.meteo.weather.model.domain.jpa;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,7 +22,8 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "weather_city")
-public class WeatherCity {
+public class WeatherCityEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "weather_city_id_gen")
     @SequenceGenerator(name = "weather_city_id_gen", sequenceName = "weather_city_city_id_seq", allocationSize = 1)
@@ -47,6 +48,6 @@ public class WeatherCity {
     private Boolean collectWeather;
 
     @OneToMany(mappedBy = "city")
-    private Set<WeatherRecord> weatherRecords = new LinkedHashSet<>();
+    private Set<WeatherRecordEntity> weatherRecords = new LinkedHashSet<>();
 
 }

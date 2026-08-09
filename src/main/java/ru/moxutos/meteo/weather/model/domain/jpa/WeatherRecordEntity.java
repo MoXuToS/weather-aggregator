@@ -1,4 +1,4 @@
-package ru.moxutos.meteo.weather.model.entity;
+package ru.moxutos.meteo.weather.model.domain.jpa;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,7 +26,7 @@ import java.time.OffsetDateTime;
         @Index(name = "idx_weather_record_city_measured_at", columnList = "city_id, measured_at"),
         @Index(name = "idx_weather_record_source_measured_at", columnList = "source_id, measured_at")
 })
-public class WeatherRecord {
+public class WeatherRecordEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "record_id", nullable = false)
@@ -35,12 +35,12 @@ public class WeatherRecord {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "city_id", nullable = false)
-    private WeatherCity city;
+    private WeatherCityEntity city;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "source_id", nullable = false)
-    private WeatherSource source;
+    private WeatherSourceEntity source;
 
     @NotNull
     @Column(name = "measured_at", nullable = false)
