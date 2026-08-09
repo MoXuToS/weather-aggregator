@@ -1,0 +1,9 @@
+[versions]
+jpa-gen = "7.0.10.Final"
+versions = "0.45.0"
+
+[libraries]
+hibernate-jpa-gen = { module = "org.hibernate:hibernate-jpamodelgen", version.ref = "jpa-gen" }
+
+[plugins]
+versions = { id = "com.github.ben-manes.versions", version.ref = "versions" }
