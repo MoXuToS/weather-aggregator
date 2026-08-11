@@ -1,9 +1,14 @@
 [versions]
 jpa-gen = "7.0.10.Final"
 versions = "0.45.0"
+swagger = "3.1.0"
+mapstruct = "1.6.3"
 
 [libraries]
 hibernate-jpa-gen = { module = "org.hibernate:hibernate-jpamodelgen", version.ref = "jpa-gen" }
+swagger-ui = { module = "org.springdoc:springdoc-openapi-starter-webflux-ui", version.ref = "swagger" }
+mapstruct-lib = { module = "org.mapstruct:mapstruct", version.ref = "mapstruct" }
+mapstruct-processor = { module = "org.mapstruct:mapstruct-processor", version.ref = "mapstruct" }
 
 [plugins]
 versions = { id = "com.github.ben-manes.versions", version.ref = "versions" }

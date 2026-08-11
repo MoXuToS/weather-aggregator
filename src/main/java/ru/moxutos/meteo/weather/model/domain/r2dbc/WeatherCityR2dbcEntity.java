@@ -4,34 +4,34 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.ColumnDefault;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
-@Table("weather_source")
-public class WeatherSourceEntity {
-    
+@Table(name = "weather_city")
+public class WeatherCityR2dbcEntity {
+
     @Id
     private Long id;
 
-    @Size(max = 64)
-    @Column("name")
-    private String name;
-
-    @Size(max = 256)
+    @Size(max = 128)
     @NotNull
-    @Column("base_url")
-    private String baseUrl;
+    @Column("city_name")
+    private String cityName;
 
-    @ColumnDefault("true")
-    @Column("enabled")
-    private Boolean enabled;
+    @NotNull
+    @Column("latitude")
+    private BigDecimal latitude;
 
-    @Size(max = 256)
-    @Column("api_key")
-    private String apiKey;
+    @NotNull
+    @Column("longitude")
+    private BigDecimal longitude;
+
+    @Column("collect_weather")
+    private Boolean collectWeather;
 
 }

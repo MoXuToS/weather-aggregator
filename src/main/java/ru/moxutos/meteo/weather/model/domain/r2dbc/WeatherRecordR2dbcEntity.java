@@ -13,7 +13,7 @@ import java.time.OffsetDateTime;
 @Getter
 @Setter
 @Table(name = "weather_record")
-public class WeatherRecordEntity {
+public class WeatherRecordR2dbcEntity {
 
     @Id
     @Column("record_id")

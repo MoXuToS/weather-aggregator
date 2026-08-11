@@ -22,7 +22,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "weather_city")
-public class WeatherCityEntity {
+public class WeatherCityJpaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "weather_city_id_gen")
@@ -48,6 +48,6 @@ public class WeatherCityEntity {
     private Boolean collectWeather;
 
     @OneToMany(mappedBy = "city")
-    private Set<WeatherRecordEntity> weatherRecords = new LinkedHashSet<>();
+    private Set<WeatherRecordJpaEntity> weatherRecords = new LinkedHashSet<>();
 
 }

@@ -26,7 +26,7 @@ import java.time.OffsetDateTime;
         @Index(name = "idx_weather_record_city_measured_at", columnList = "city_id, measured_at"),
         @Index(name = "idx_weather_record_source_measured_at", columnList = "source_id, measured_at")
 })
-public class WeatherRecordEntity {
+public class WeatherRecordJpaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "record_id", nullable = false)
@@ -35,12 +35,12 @@ public class WeatherRecordEntity {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "city_id", nullable = false)
-    private WeatherCityEntity city;
+    private WeatherCityJpaEntity city;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "source_id", nullable = false)
-    private WeatherSourceEntity source;
+    private WeatherSourceJpaEntity source;
 
     @NotNull
     @Column(name = "measured_at", nullable = false)

@@ -6,6 +6,7 @@ spring:
     username: weather
     password: 'qwerty$4'
     driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
     hikari:
       minimum-idle: 1
       maximum-pool-size: 5

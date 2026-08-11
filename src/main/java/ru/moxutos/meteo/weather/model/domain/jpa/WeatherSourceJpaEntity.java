@@ -20,7 +20,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "weather_source")
-public class WeatherSourceEntity {
+public class WeatherSourceJpaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "source_id", nullable = false)
@@ -45,6 +45,6 @@ public class WeatherSourceEntity {
     private String apiKey;
 
     @OneToMany(mappedBy = "source")
-    private Set<WeatherRecordEntity> weatherRecords = new LinkedHashSet<>();
+    private Set<WeatherRecordJpaEntity> weatherRecords = new LinkedHashSet<>();
 
 }

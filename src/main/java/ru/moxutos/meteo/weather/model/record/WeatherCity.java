@@ -1,4 +1,4 @@
-package ru.moxutos.meteo.weather.model.domain;
+package ru.moxutos.meteo.weather.model.record;
 
 import java.math.BigDecimal;
 
