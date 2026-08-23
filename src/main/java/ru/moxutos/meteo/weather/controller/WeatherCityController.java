@@ -16,7 +16,7 @@ import ru.moxutos.meteo.weather.service.WeatherCityService;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/baggage")
+@RequestMapping("/api/weather-city")
 @Tag(name = "Weather City", description = "Операции с городами откуда предоставляется погода")
 public class WeatherCityController {
 

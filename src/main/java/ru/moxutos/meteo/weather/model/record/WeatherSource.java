@@ -1,10 +1,11 @@
 package ru.moxutos.meteo.weather.model.record;
 
+import java.util.Map;
+
 public record WeatherSource(
-        Long id,
         String name,
         String baseUrl,
         Boolean enabled,
-        String apiKey
-) {
-}
+        String apiKey,
+        Map<String, Object> requestParams)
+{ }

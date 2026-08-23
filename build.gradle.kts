@@ -31,6 +31,7 @@ dependencies {
 	// Flyway
 	implementation("org.springframework.boot:spring-boot-starter-flyway")
 	implementation("org.flywaydb:flyway-database-postgresql")
+	implementation("org.postgresql:r2dbc-postgresql")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
 	// SWAGGER-UI
@@ -41,7 +42,6 @@ dependencies {
 
 	// PostgreSQL
 	runtimeOnly("org.postgresql:postgresql")
-	runtimeOnly("org.postgresql:r2dbc-postgresql")
 
 	// Lombok
 	compileOnly("org.projectlombok:lombok")

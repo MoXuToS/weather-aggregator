@@ -1,0 +1,1 @@
+alter table weather_source add column if not exists request_params jsonb;

@@ -1,5 +1,6 @@
 package ru.moxutos.meteo.weather.model.domain.r2dbc;
 
+import io.r2dbc.postgresql.codec.Json;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
@@ -15,6 +16,7 @@ import org.springframework.data.relational.core.mapping.Table;
 public class WeatherSourceR2dbcEntity {
     
     @Id
+    @Column("source_id")
     private Long id;
 
     @Size(max = 64)
@@ -34,4 +36,6 @@ public class WeatherSourceR2dbcEntity {
     @Column("api_key")
     private String apiKey;
 
+    @Column("request_params")
+    private Json requestParams;
 }

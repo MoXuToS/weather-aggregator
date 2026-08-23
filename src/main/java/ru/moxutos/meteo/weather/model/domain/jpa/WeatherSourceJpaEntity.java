@@ -12,8 +12,11 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Set;
 
 @Getter
@@ -46,5 +49,9 @@ public class WeatherSourceJpaEntity {
 
     @OneToMany(mappedBy = "source")
     private Set<WeatherRecordJpaEntity> weatherRecords = new LinkedHashSet<>();
+
+    @Column(name = "request_params")
+    @JdbcTypeCode(SqlTypes.JSON)
+    private Map<String, Object> requestParams;
 
 }
